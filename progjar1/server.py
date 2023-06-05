@@ -11,7 +11,7 @@ try:
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
     # Bind the socket to the port
-    server_address = ('0.0.0.0', 10000) #--> gunakan 0.0.0.0 agar binding ke seluruh ip yang tersedia
+    server_address = ('0.0.0.0', 32444) #--> gunakan 0.0.0.0 agar binding ke seluruh ip yang tersedia
 
     logging.info(f"starting up on {server_address}")
     sock.bind(server_address)

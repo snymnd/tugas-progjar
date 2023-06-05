@@ -14,8 +14,14 @@ try:
     logging.info(f"connecting to {server_address}")
     sock.connect(server_address)
 
+    #Membuka file txt dan mendapatkan isinya
+    text_file = open("readme.txt", "r")
+    data_file = text_file.read()
+    text_file.close()
+
     # Send data
-    message = 'INI ADALAH DATA YANG DIKIRIM ABCDEFGHIJKLMNOPQ'
+    message = data_file
+    # message = 'INI ADALAH DATA YANG DIKIRIM ABCDEFGHIJKLMNOPQ'
     logging.info(f"sending {message}")
     sock.sendall(message.encode())
     # Look for the response
